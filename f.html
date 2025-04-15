@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Fatima</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .intro {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .scroll-hint {
+            position: absolute;
+            bottom: 50px;
+            animation: bounce 2s infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .content {
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa3a3, #f8a5c2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 8s ease infinite;
+            background-size: 400% 400%;
+        }
+        
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .emoji {
+            font-size: 2rem;
+            margin: 10px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {transform: translateY(0);}
+            50% {transform: translateY(-15px);}
+        }
+        
+        .heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff6b6b;
+            animation: float-heart 4s linear forwards;
+        }
+        
+        @keyframes float-heart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .flower {
+            position: absolute;
+            font-size: 30px;
+            animation: float-flower 6s linear forwards;
+        }
+        
+        @keyframes float-flower {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas-container" id="canvas-container"></div>
+    
+    <div class="intro">
+        <h1>For Fatima</h1>
+        <div class="scroll-hint">
+            <span>Scroll down 👇</span>
+            <span>Прокрутите вниз 👇</span>
+            <div style="font-size: 3rem;">👇</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="content">
+            <h1>Your Smile</h1>
+            <p>Brightens my day like sunshine after rain</p>
+            <div>
+                <span class="emoji">☀️</span>
+                <span class="emoji">🌈</span>
+                <span class="emoji">😊</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="content">
+            <h1>Your Laugh</h1>
+            <p>Is the most beautiful melody I've ever heard</p>
+            <div>
+                <span class="emoji">🎵</span>
+                <span class="emoji">🎶</span>
+                <span class="emoji">😂</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="content">
+            <h1>Your Eyes</h1>
+            <p>Sparkle like stars in the night sky</p>
+            <div>
+                <span class="emoji">✨</span>
+                <span class="emoji">🌟</span>
+                <span class="emoji">👀</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="content">
+            <h1>Your Kindness</h1>
+            <p>Touches hearts wherever you go</p>
+            <div>
+                <span class="emoji">💖</span>
+                <span class="emoji">🤗</span>
+                <span class="emoji">🌷</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="content">
+            <h1>You're Amazing</h1>
+            <p>Just the way you are</p>
+            <div>
+                <span class="emoji">🎉</span>
+                <span class="emoji">💫</span>
+                <span class="emoji">🦋</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="heart-container" id="heart-container"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Scroll animation
+        const sections = document.querySelectorAll('.section');
+        
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('active');
+                }
+            });
+            
+            // Create floating hearts on scroll
+            if (Math.random() > 0.7) {
+                createFloatingHeart();
+            }
+        });
+        
+        // Create floating hearts
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.getElementById('heart-container').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+        
+        // Create floating flowers
+        function createFloatingFlower() {
+            const flowers = ['🌸', '🌹', '🌺', '🌻', '🌼', '🌷', '💐', '🏵️'];
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+            flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = (Math.random() * 4 + 3) + 's';
+            document.getElementById('heart-container').appendChild(flower);
+            
+            setTimeout(() => {
+                flower.remove();
+            }, 6000);
+        }
+        
+        // Create hearts and flowers periodically
+        setInterval(createFloatingHeart, 800);
+        setInterval(createFloatingFlower, 1200);
+        
+        // 3D Background with Three.js
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+        
+        // Create particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particleCount = 1000;
+        
+        const posArray = new Float32Array(particleCount * 3);
+        
+        for (let i = 0; i < particleCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 10;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0xffa3a3,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending
+        });
+        
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+        
+        camera.position.z = 3;
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            particlesMesh.rotation.x += 0.0005;
+            particlesMesh.rotation.y += 0.0005;
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Handle window resiz  e
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
